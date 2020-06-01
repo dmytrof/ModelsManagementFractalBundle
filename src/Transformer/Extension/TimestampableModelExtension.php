@@ -13,7 +13,7 @@ namespace Dmytrof\ModelsManagementFractalBundle\Transformer\Extension;
 
 use Dmytrof\FractalBundle\Transformer\{AbstractTransformer, Extension\AbstractExtension};
 use Dmytrof\ModelsManagementFractalBundle\Util\TraitChecker;
-use Dmytrof\ModelsManagementBundle\Model\Traits\TimestampableModelTrait;
+use Dmytrof\ModelsManagementBundle\Model\Traits\{TimestampableModelTrait, TimestampableEntityTrait};
 use League\Fractal\Resource\{Primitive, ResourceInterface};
 
 class TimestampableModelExtension extends AbstractExtension
@@ -26,7 +26,8 @@ class TimestampableModelExtension extends AbstractExtension
      */
     protected function _supports(\ReflectionClass $reflectionClass, AbstractTransformer $transformer): bool
     {
-        return TraitChecker::check($reflectionClass->getName(), TimestampableModelTrait::class);
+        return TraitChecker::check($reflectionClass->getName(), TimestampableModelTrait::class)
+            || TraitChecker::check($reflectionClass->getName(), TimestampableEntityTrait::class);
     }
 
     /**
