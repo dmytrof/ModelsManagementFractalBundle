@@ -12,7 +12,7 @@
 namespace Dmytrof\ModelsManagementFractalBundle\Transformer\Extension;
 
 use Dmytrof\FractalBundle\Transformer\{AbstractTransformer, Extension\AbstractExtension};
-use Dmytrof\FractalModelsManagementBundle\Util\TraitChecker;
+use Dmytrof\ModelsManagementFractalBundle\Util\TraitChecker;
 use Dmytrof\ModelsManagementBundle\Model\Traits\TimestampableModelTrait;
 use League\Fractal\Resource\{Primitive, ResourceInterface};
 
